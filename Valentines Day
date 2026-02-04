@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine 💖</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: pink;
+    padding-top: 60px;
+  }
+  button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  #noBtn {
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💕</h1>
+
+<button onclick="yesClicked()">YES 😍</button>
+<button id="noBtn" onmouseover="moveNo()">NO 🙄</button>
+
+<script>
+function moveNo() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  document.getElementById("noBtn").style.left = x + "px";
+  document.getElementById("noBtn").style.top = y + "px";
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <h1>You can be my Valentine 😌💘</h1>
+    <p>ONLY if you answer this 👀</p>
+
+    <h2>Where was our first date?</h2>
+    <button onclick="correct()">Cafe Mocha ☕</button>
+    <button onclick="wrong()">Starbucks 😏</button>
+    <button onclick="wrong()">CCD 😂</button>
+  `;
+}
+
+function correct() {
+  document.body.innerHTML = `
+    <h1>DAMN 😳</h1>
+    <p>Correct answer 💕</p>
+    <p>You earned a FREE BEAR HUG 🐻🤗</p>
+
+    <h2>Next Question 😏</h2>
+    <p>What did we order first?</p>
+    <button onclick="final()">Coffee ☕</button>
+    <button onclick="wrong()">Tea 😜</button>
+  `;
+}
+
+function wrong() {
+  alert("WRONG 😤 Someone is getting punished like a tiny baby 👶😂 Try again!");
+}
+
+function final() {
+  document.body.innerHTML = `
+    <h1>CONGRATULATIONS MY VALENTINE 💖</h1>
+    <p>You passed EVERYTHING 😍</p>
+    <p>This is for you 💐🎂🐻</p>
+    <img src="https://i.imgur.com/0KfbGCM.png" width="250">
+  `;
+}
+</script>
+
+</body>
+</html>
